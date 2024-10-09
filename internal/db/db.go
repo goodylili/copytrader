@@ -11,12 +11,8 @@ type Database struct {
 	Client *gorm.DB
 }
 
-func NewDatabase() (*Database, error) {
-	// Hardcoded database file path
-	dbPath := "./database.db"
-
-	// Open the SQLite database
-	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
+func NewDatabase(databaseURL string) (*Database, error) {
+	db, err := gorm.Open(sqlite.Open(databaseURL), &gorm.Config{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to open database: %v", err)
 	}

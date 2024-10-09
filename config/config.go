@@ -16,6 +16,7 @@ type Config struct {
 	UniswapBaseFactory string
 	WethBaseAddress    string
 	Redis              string
+	DatabaseURL        string
 }
 
 func LoadConfig() *Config {
@@ -33,6 +34,7 @@ func LoadConfig() *Config {
 		Redis:              os.Getenv("REDIS"),
 		BaseRPC:            os.Getenv("BASE_RPC"),
 		UniswapBaseRouter:  os.Getenv("UNISWAP_BASE_ROUTER"),
+		DatabaseURL:        os.Getenv("DATABASE_URL"),
 		UniswapBaseFactory: os.Getenv("UNISWAP_BASE_FACTORY"),
 		WethBaseAddress:    os.Getenv("WETH_BASE_ADDRESS"),
 	}
