@@ -30,7 +30,6 @@ func NewDatabase(databaseURL string) (*Database, error) {
 	}, nil
 }
 
-// Ping - pings the database to check if it is alive
 func (d *Database) Ping(ctx context.Context) error {
 	client, err := d.Client.DB()
 	if err != nil {
